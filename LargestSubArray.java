@@ -1,16 +1,19 @@
-int findLargest(int[] arr, int n) {
-        int max = 0;
-        int current_sum = Integer.MIN_VALUE;
+//Problem statement:
+//Given array with positive and negative numbers find subarray with the maximum sum
+
+ int findLargest(int[] arr, int n) {
+        int current_sum = 0;
+        int max = Integer.MIN_VALUE;
         int i = 0;
 
         while (i < n){
-        max += arr[i];
-        current_sum = Math.max(max, current_sum);
+            current_sum += arr[i];
+            max = Math.max(max, current_sum);
 
-        if(max < 0){
-        max = 0;
+            if(current_sum < 0){
+                current_sum = 0;
+            }
+            i++;
         }
-        i++;
-        }
-        return current_sum;
-}
+        return max;
+    }
