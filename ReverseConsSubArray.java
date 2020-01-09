@@ -19,7 +19,7 @@ public class ReverseConsSubArray {
         }
     }
 
-    static void reverse(int[] arr, int left, int right) {
+    private static void reverse(int[] arr, int left, int right) {
         int i = left;
         int j = right - 1;
 
